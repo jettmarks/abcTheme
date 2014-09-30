@@ -7,10 +7,6 @@
 
 // headline font
 $headline-font: "Oswald", sans-serif;
-$title-font-weight: 700;
-
-// alternative headline font
-$headline-font-alt: "Oswald", sans-serif;
 
 // main font
 $font: "Droid Serif", serif;
@@ -24,21 +20,35 @@ $green: #619114;
 $facebook: #3b5998;
 $twitter: #00aced;
 $header-color: #fff;
-$header-text-color: #000;
 
-$theme-color-1: $turquoise;
-$theme-color-2: #000;
-$theme-color-3: $grey;
-$theme-color-4: $charcoal;
+// ABC Color Palette
+$abc-navy: #144549;
+$abc-teal: #007478;
+$abc-medium-grey: #bfbfb0;
+$abc-blue: #8ebabd;
+$abc-light-blue: #c8e6db;
+$abc-lime: #d6d353;
+$abc-chartreuse: #b8b734;
+$abc-light-grey: #e9e9e0;
+$abc-charcoal: #414042;
+
+$theme-color-1: $abc-blue;
+// $theme-color-1: #28948A;
+// $theme-color-1: $turquoise;
+$theme-color-2: $abc-teal;
+$theme-color-3: $abc-light-grey;
+//$theme-color-3: $grey;
+$theme-color-4: $abc-medium-grey;
+// $theme-color-4: $charcoal;
 
 //general site settings
-$site-bg: #fff;
-$site-color: #000;
-$desktop-site-bg: #fff;
-$desktop-site-color: #000;
-$onecolumn-bg: white;
-$twocolumn-color: #000;
-$footer-bg: #000;
+$site-bg: #FAF8E2;
+$site-color: $theme-color-2;
+$desktop-site-bg: #FAF8E2;
+$desktop-site-color: $theme-color-2;
+$onecolumn-bg: #fff;
+$twocolumn-color: $theme-color-2;
+$footer-bg: $theme-color-2;
 $headline-weight: 700;
 $check_radio_sheet: url(check_radio_sheet.png);
 $progress: $theme-color-4;
@@ -68,10 +78,10 @@ $flex-color: #fff;
 
 // supporter nav buttons
 $supporter-nav-button-one: $grey;
-$supporter-nav-color-one: #000;
+$supporter-nav-color-one: $abc-navy;
 $supporter-nav-button-two: $theme-color-3;
 $supporter-nav-color-two: $theme-color-4;
-$supporter-nav-button-three: #000;
+$supporter-nav-button-three: $abc-navy;
 $supporter-nav-color-three: #fff;
 
 //turquoise specific fields
@@ -165,7 +175,7 @@ textarea {
 // headlines
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $headline-font-alt;
+  font-family: $headline-font;
   margin: 0;
   padding: 0;
 }
@@ -287,7 +297,7 @@ img {
 .chromeframe {
   margin: 0.2em 0;
   background: #ccc;
-  color: #000;
+  color: $abc-navy;
   padding: 0.2em 0;
 }
 
@@ -341,7 +351,7 @@ body {
 .fb-like-box iframe {
   display: block;
 }
-Ï
+Ã�
 // message asking people to check their email to activate account
 
 .activation-message {
@@ -463,7 +473,7 @@ body {
   line-height: 28px;
   @include background-size(cover !important);
   padding: 25px 0;
-  @include box-shadow(0 0 2px #000);
+  @include box-shadow(0 0 2px $abc-navy);
   text-transform: $headline-transform;
   position: relative;
   z-index: 99999;
@@ -476,13 +486,11 @@ body {
 // site title shown in header
 
 .title {
-  color: #000;
+  color: $abc-navy;
   font-size: 48px;
   line-height: 50px;
   a {
-    color: $header-text-color;
-    font-family: $headline-font;
-    font-weight: $title-font-weight;
+    color: $abc-navy;
   }
 }
 
@@ -548,7 +556,7 @@ header.splash {
 
 .menu-link {
   .icon-menu {
-    color: $header-text-color;
+    color: $abc-navy;
     font-size: 24px;
   }
 }
@@ -569,6 +577,9 @@ nav {
   }
   .right-column, .left-column-narrow {
     margin-bottom: 15px;
+  }
+  .left-column {
+    overflow: hidden;
   }
 }
 
@@ -760,7 +771,7 @@ nav {
     position: relative;
     width: 37%; // 81 by 300
     margin: 0;
-    vertical-align: middle;
+    top: 2px;
     height: 40px;
     @include border-radius-top-left(0px);
     @include border-radius-bottom-left(0px);
@@ -1016,7 +1027,7 @@ ul#page-stream {
 .header-container {
   min-height: 100px;
   background: $header-color;
-  @include box-shadow(0 0 2px #000);
+  @include box-shadow(0 0 2px $abc-navy);
 }
 
 // site wide footer
@@ -1300,7 +1311,7 @@ footer {
     background-color: black;
     text-align: center;
     line-height: 40px;
-    @if lightness(#000) == lightness($desktop-site-bg) {
+    @if lightness($abc-navy) == lightness($desktop-site-bg) {
       background-color: #333;
     }
   }
@@ -1349,24 +1360,14 @@ footer {
     background-color: $supporter-nav-button-two;
     color: $supporter-nav-color-two;
     &:hover {
-      @if lightness($icon-button-color) > 50% {
-        background-color: darken($theme-color-1, 5);
-      }
-      @else {
-        background-color: lighten($theme-color-1, 5);
-      }
+      background-color: lighten($theme-color-1, 5);
     }
   }
   &:nth-child(3){
     background-color: $supporter-nav-button-three;
     color: $supporter-nav-color-three;
     &:hover {
-      @if lightness($icon-button-color) > 50% {
-        background-color: darken($theme-color-1, 5);
-      }
-      @else {
-        background-color: lighten($theme-color-1, 5);
-      }
+      background-color: lighten($theme-color-1, 5);
     }
   }
 }
@@ -1629,7 +1630,7 @@ small {
 
 .odd {
   background-color: $ltgrey;
-  color: #000;
+  color: $abc-navy;
 }
 
 // tracking url on recruiting page
@@ -1706,7 +1707,7 @@ ul.membership-list {
     padding: 15px;
     display: inline-block;
     margin: 0 10px 15px 0;
-    width: 100%; // 236px ÷ 984px
+    width: 100%; // 236px Ã· 984px
     .membership-bottom {
       background-color: #444;
       color: #ccc;
@@ -1733,7 +1734,7 @@ ul.membership-list {
   padding-bottom: 30px;
   .stat-box {
     font-family: $headline-font;
-    min-width: 105px;
+    width: 105px;
     float: left;
     text-align: center;
     color: $icon-button-color;
@@ -1755,7 +1756,7 @@ ul.membership-list {
         }
       }
       .stat-box + .stat-box {
-        background: #000;
+        background: $abc-navy;
         border-left: none;
       }
     }
@@ -1980,7 +1981,7 @@ h4.expander-head {
     padding: 0;
     margin: 0;
     float: right;
-    color: #000;
+    color: $abc-navy;
     @include opacity(.2);
     cursor: pointer;
     border: 0;
@@ -2129,7 +2130,7 @@ h4.expander-head {
   .icon-button i {
     line-height: 25px;
     display: inline-block;
-    border: none;
+    vertical-align: bottom;
     &:before {
       margin-left: 1px;
     }
@@ -2197,7 +2198,7 @@ h4.expander-head {
   line-height: 16px;
 }
 
-.content-pages-show-political-capital, .content-pages-show-political-capital-wide {
+.content-pages-show-political-capital {
   // remove if you wish to show icons on descriptions
   [class^="icon-"] {
     display: none;
@@ -2262,7 +2263,7 @@ h4.expander-head {
 .page-features {
   position: relative;
   margin: 35px 0 100px;
-  @include box-shadow(0 0 8px -2px #000);
+  @include box-shadow(0 0 8px -2px $abc-navy);
   border: $feature-border;
   .single-feature, .multiple-features {
     display: block;
@@ -2315,8 +2316,8 @@ h4.expander-head {
     text-align: center;
     margin: 0px auto;
     display: block;
-    font-family: $headline-font-alt;
-    text-shadow: 0 0 15px #000;
+    font-family: $headline-font;
+    text-shadow: 0 0 15px $abc-navy;
     em{
       font-family: $font;
       font-weight: 500;
@@ -2624,11 +2625,6 @@ ul.homepage_excerpt-list {
 .with-background{
   .header-container{
     background: white;
-  }
-  .title {
-    a {
-      color: #000;
-    }
   }
   .onecolumn-container, .twocolumn-container .left-column, .twocolumn-container .right-column .supporter-pic, .admin-panel, .action-panel, .point-pic-right, .box{
     @include transparent-bg;
