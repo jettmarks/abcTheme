@@ -7,6 +7,10 @@
 
 // headline font
 $headline-font: "Oswald", sans-serif;
+$title-font-weight: 700;
+
+// alternative headline font
+$headline-font-alt: "Oswald", sans-serif;
 
 // main font
 $font: "Droid Serif", serif;
@@ -20,35 +24,21 @@ $green: #619114;
 $facebook: #3b5998;
 $twitter: #00aced;
 $header-color: #fff;
+$header-text-color: #000;
 
-// ABC Color Palette
-$abc-navy: #144549;
-$abc-teal: #007478;
-$abc-medium-grey: #bfbfb0;
-$abc-blue: #8ebabd;
-$abc-light-blue: #c8e6db;
-$abc-lime: #d6d353;
-$abc-chartreuse: #b8b734;
-$abc-light-grey: #e9e9e0;
-$abc-charcoal: #414042;
-
-$theme-color-1: $abc-blue;
-// $theme-color-1: #28948A;
-// $theme-color-1: $turquoise;
-$theme-color-2: $abc-teal;
-$theme-color-3: $abc-light-grey;
-//$theme-color-3: $grey;
-$theme-color-4: $abc-medium-grey;
-// $theme-color-4: $charcoal;
+$theme-color-1: $turquoise;
+$theme-color-2: #000;
+$theme-color-3: $grey;
+$theme-color-4: $charcoal;
 
 //general site settings
-$site-bg: #FAF8E2;
-$site-color: $theme-color-2;
-$desktop-site-bg: #FAF8E2;
-$desktop-site-color: $theme-color-2;
-$onecolumn-bg: #fff;
-$twocolumn-color: $theme-color-2;
-$footer-bg: $theme-color-2;
+$site-bg: #fff;
+$site-color: #000;
+$desktop-site-bg: #fff;
+$desktop-site-color: #000;
+$onecolumn-bg: white;
+$twocolumn-color: #000;
+$footer-bg: #000;
 $headline-weight: 700;
 $check_radio_sheet: url(check_radio_sheet.png);
 $progress: $theme-color-4;
@@ -175,7 +165,7 @@ textarea {
 // headlines
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $headline-font;
+  font-family: $headline-font-alt;
   margin: 0;
   padding: 0;
 }
@@ -490,7 +480,9 @@ body {
   font-size: 48px;
   line-height: 50px;
   a {
-    color: #000;
+    color: $header-text-color;
+    font-family: $headline-font;
+    font-weight: $title-font-weight;
   }
 }
 
@@ -556,7 +548,7 @@ header.splash {
 
 .menu-link {
   .icon-menu {
-    color: #000;
+    color: $header-text-color;
     font-size: 24px;
   }
 }
@@ -577,9 +569,6 @@ nav {
   }
   .right-column, .left-column-narrow {
     margin-bottom: 15px;
-  }
-  .left-column {
-    overflow: hidden;
   }
 }
 
@@ -771,7 +760,7 @@ nav {
     position: relative;
     width: 37%; // 81 by 300
     margin: 0;
-    top: 2px;
+    vertical-align: middle;
     height: 40px;
     @include border-radius-top-left(0px);
     @include border-radius-bottom-left(0px);
@@ -1360,14 +1349,24 @@ footer {
     background-color: $supporter-nav-button-two;
     color: $supporter-nav-color-two;
     &:hover {
-      background-color: lighten($theme-color-1, 5);
+      @if lightness($icon-button-color) > 50% {
+        background-color: darken($theme-color-1, 5);
+      }
+      @else {
+        background-color: lighten($theme-color-1, 5);
+      }
     }
   }
   &:nth-child(3){
     background-color: $supporter-nav-button-three;
     color: $supporter-nav-color-three;
     &:hover {
-      background-color: lighten($theme-color-1, 5);
+      @if lightness($icon-button-color) > 50% {
+        background-color: darken($theme-color-1, 5);
+      }
+      @else {
+        background-color: lighten($theme-color-1, 5);
+      }
     }
   }
 }
@@ -1734,7 +1733,7 @@ ul.membership-list {
   padding-bottom: 30px;
   .stat-box {
     font-family: $headline-font;
-    width: 105px;
+    min-width: 105px;
     float: left;
     text-align: center;
     color: $icon-button-color;
@@ -2130,7 +2129,7 @@ h4.expander-head {
   .icon-button i {
     line-height: 25px;
     display: inline-block;
-    vertical-align: bottom;
+    border: none;
     &:before {
       margin-left: 1px;
     }
@@ -2198,7 +2197,7 @@ h4.expander-head {
   line-height: 16px;
 }
 
-.content-pages-show-political-capital {
+.content-pages-show-political-capital, .content-pages-show-political-capital-wide {
   // remove if you wish to show icons on descriptions
   [class^="icon-"] {
     display: none;
@@ -2316,7 +2315,7 @@ h4.expander-head {
     text-align: center;
     margin: 0px auto;
     display: block;
-    font-family: $headline-font;
+    font-family: $headline-font-alt;
     text-shadow: 0 0 15px #000;
     em{
       font-family: $font;
@@ -2625,6 +2624,11 @@ ul.homepage_excerpt-list {
 .with-background{
   .header-container{
     background: white;
+  }
+  .title {
+    a {
+      color: #000;
+    }
   }
   .onecolumn-container, .twocolumn-container .left-column, .twocolumn-container .right-column .supporter-pic, .admin-panel, .action-panel, .point-pic-right, .box{
     @include transparent-bg;

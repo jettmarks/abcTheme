@@ -6,54 +6,48 @@
 //* style variables *//
 
 // headline font
-$headline-font: "Oswald", sans-serif;
+$headline-font: 'Oswald', sans-serif;
+
+// alternative headline font
+$headline-font-alt: "Oswald", sans-serif;
 
 // main font
-$font: "Droid Serif", serif;
+$font: 'Droid Serif', serif;
 
-$turquoise: #28948A;
-// $turquoise: #53cfd7;
-$grey: #ccc;
+$turquoise: #53cfd7;
+$grey: #cccccc;
 $ltgrey: #f2f2f2;
 $charcoal: #656565;
 $red: #d41116;
 $green: #619114;
-$facebook: #3b5998;
+$facebook: #3b5998; 
 $twitter: #00aced;
 
-// ABC Color Palette
-$abc-navy: #144549;
-$abc-teal: #007478;
-$abc-medium-grey: #bfbfb0;
-$abc-blue: #8ebabd;
-$abc-light-blue: #c8e6db;
-$abc-lime: #d6d353;
-$abc-chartreuse: #b8b734;
-$abc-light-grey: #e9e9e0;
-$abc-charcoal: #414042;
-
-$onecolumn-bg: #fff;
+$onecolumn-bg: white;
 $twocolumn-color: #000;
 
-$nav-hover: $abc-blue;
+$nav-hover: $turquoise;
 $nav-hover-color: #000;
-$nav-background: $abc-teal;
+$nav-background: #000;
 $nav-color: #fff;
-$desktop-site-bg: #FAF8E2;
-$desktop-site-color: $abc-teal;
+$desktop-site-bg: #fff;
+$desktop-site-color: #000;
 $nav-container-border: 0;
 
 $headline-transform: uppercase;
 $flex-background: transparent;
-$flex-border: 3px solid #fff;
+$flex-border: 4px solid #fff;
 $flex-color: #fff;
 
 $theme-color-1: $turquoise;
-$theme-color-2: #1b5864;
+$theme-color-2: #000;
 $theme-color-3: $grey;
 $theme-color-4: $charcoal;
 
 $icon-button-bg: $theme-color-4;
+
+$onecolumn-container-padding: 50px 30px;
+$onecolumn-container-border: 1px solid $theme-color-3;
 
 // border-radius mixin
 @import "border_radius";
@@ -87,8 +81,8 @@ h1.title {
 // page layout if the sidebar is turned on
 
 .onecolumn-container {
-  padding: 50px 30px;
-  border: 1px solid $theme-color-3;
+  padding: $onecolumn-container-padding;
+  border: $onecolumn-container-border;
   width: 100%;
   margin: 0px auto;
   background: $onecolumn-bg;
