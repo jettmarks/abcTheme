@@ -8,6 +8,8 @@
 // headline font
 $headline-font: "Oswald", sans-serif;
 
+$headline-font-alt: "Oswald", sans-serif;
+
 // main font
 $font: "Droid Serif", serif;
 
@@ -80,7 +82,7 @@ $flex-color: #fff;
 $supporter-nav-button-one: $grey;
 $supporter-nav-color-one: $abc-navy;
 $supporter-nav-button-two: $theme-color-3;
-$supporter-nav-color-two: $theme-color-4;
+$supporter-nav-color-two: $abc-teal;
 $supporter-nav-button-three: $abc-navy;
 $supporter-nav-color-three: #fff;
 
@@ -351,7 +353,7 @@ body {
 .fb-like-box iframe {
   display: block;
 }
-Ã�
+
 // message asking people to check their email to activate account
 
 .activation-message {
