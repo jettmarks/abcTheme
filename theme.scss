@@ -8,6 +8,8 @@
 // headline font
 $headline-font: "Oswald", sans-serif;
 
+$headline-font-alt: "Oswald", sans-serif;
+
 // main font
 $font: "Droid Serif", serif;
 
@@ -78,10 +80,10 @@ $flex-color: #fff;
 
 // supporter nav buttons
 $supporter-nav-button-one: $grey;
-$supporter-nav-color-one: #000;
+$supporter-nav-color-one: $abc-navy;
 $supporter-nav-button-two: $theme-color-3;
-$supporter-nav-color-two: $theme-color-4;
-$supporter-nav-button-three: #000;
+$supporter-nav-color-two: $abc-teal;
+$supporter-nav-button-three: $abc-navy;
 $supporter-nav-color-three: #fff;
 
 //turquoise specific fields
@@ -297,7 +299,7 @@ img {
 .chromeframe {
   margin: 0.2em 0;
   background: #ccc;
-  color: #000;
+  color: $abc-navy;
   padding: 0.2em 0;
 }
 
@@ -351,7 +353,7 @@ body {
 .fb-like-box iframe {
   display: block;
 }
-Ï
+
 // message asking people to check their email to activate account
 
 .activation-message {
@@ -473,7 +475,7 @@ body {
   line-height: 28px;
   @include background-size(cover !important);
   padding: 25px 0;
-  @include box-shadow(0 0 2px #000);
+  @include box-shadow(0 0 2px $abc-navy);
   text-transform: $headline-transform;
   position: relative;
   z-index: 99999;
@@ -486,11 +488,11 @@ body {
 // site title shown in header
 
 .title {
-  color: #000;
+  color: $abc-navy;
   font-size: 48px;
   line-height: 50px;
   a {
-    color: #000;
+    color: $abc-navy;
   }
 }
 
@@ -556,7 +558,7 @@ header.splash {
 
 .menu-link {
   .icon-menu {
-    color: #000;
+    color: $abc-navy;
     font-size: 24px;
   }
 }
@@ -1027,7 +1029,7 @@ ul#page-stream {
 .header-container {
   min-height: 100px;
   background: $header-color;
-  @include box-shadow(0 0 2px #000);
+  @include box-shadow(0 0 2px $abc-navy);
 }
 
 // site wide footer
@@ -1311,7 +1313,7 @@ footer {
     background-color: black;
     text-align: center;
     line-height: 40px;
-    @if lightness(#000) == lightness($desktop-site-bg) {
+    @if lightness($abc-navy) == lightness($desktop-site-bg) {
       background-color: #333;
     }
   }
@@ -1630,7 +1632,7 @@ small {
 
 .odd {
   background-color: $ltgrey;
-  color: #000;
+  color: $abc-navy;
 }
 
 // tracking url on recruiting page
@@ -1707,7 +1709,7 @@ ul.membership-list {
     padding: 15px;
     display: inline-block;
     margin: 0 10px 15px 0;
-    width: 100%; // 236px ÷ 984px
+    width: 100%; // 236px Ã· 984px
     .membership-bottom {
       background-color: #444;
       color: #ccc;
@@ -1756,7 +1758,7 @@ ul.membership-list {
         }
       }
       .stat-box + .stat-box {
-        background: #000;
+        background: $abc-navy;
         border-left: none;
       }
     }
@@ -1981,7 +1983,7 @@ h4.expander-head {
     padding: 0;
     margin: 0;
     float: right;
-    color: #000;
+    color: $abc-navy;
     @include opacity(.2);
     cursor: pointer;
     border: 0;
@@ -2263,7 +2265,7 @@ h4.expander-head {
 .page-features {
   position: relative;
   margin: 35px 0 100px;
-  @include box-shadow(0 0 8px -2px #000);
+  @include box-shadow(0 0 8px -2px $abc-navy);
   border: $feature-border;
   .single-feature, .multiple-features {
     display: block;
@@ -2317,7 +2319,7 @@ h4.expander-head {
     margin: 0px auto;
     display: block;
     font-family: $headline-font;
-    text-shadow: 0 0 15px #000;
+    text-shadow: 0 0 15px $abc-navy;
     em{
       font-family: $font;
       font-weight: 500;
