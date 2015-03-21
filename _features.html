@@ -14,7 +14,7 @@
         <a href="{{ feature.page.url }}" class="single-feature" style="background: url({{ feature.image_url }}) center no-repeat;">
         </a>
         {% if feature.headline.size > 0 %}
-          <a class="features-headline" href="{{ feature.page.url }}">{{ feature.headline }}{% if feature.page.type_name == 'Blog Post' %}<br><em>by {{ feature.page.author.name }}</em>{% endif %}</a>
+          
         {% endif %}
       {% endfor %}
     
@@ -30,7 +30,7 @@
               <a href="{{ feature.page.url }}" class="multiple-features" style="background: url({{ feature.image_url }}) center no-repeat;">
               </a>
               {% if feature.headline.size > 0 %}
-                <a class="features-headline" href="{{ feature.page.url }}">{{ feature.headline }}{% if feature.page.type_name == 'Blog Post' %}<br><em>by {{ feature.page.author.published_name }}</em>{% endif %}</a>
+                <a class="features-headline" href="{{ feature.page.url }}">{{ feature.headline }}</a>
               {% endif %}
             </li>
           {% endfor %}
